@@ -28,25 +28,30 @@ class Game:
         self.eda = button.Button("eda",[200,100],[700,100])
         self.ojedja = button.Button("odejda",[200,100],[700,200])
         self.game = button.Button("game",[200,100],[700,300])
-        self.menu_edya = menu_eda.Menu_eda()
+        self.menu_edya = menu_eda.Menu_eda(self)
         self.sostoanie = 0 
+        self.a = 1
+        self.b = 2 
         self.run()
+        
         
 
     def run(self):
-        while True:
-            self.event()
+        while self.a < self.b:
             self.update()
             if self.sostoanie == 0:
+                self.event()
+
                 self.draw()
             if self.sostoanie == 1:
                 self.menu_edya.draw(self.screen)
-
+                self.menu_edya.event()
+                
     def event(self):
         for event in pg.event.get():
             if event.type == pg.QUIT:
-                pg.quit()
-                exit()
+                self.b =   -10000000000000000
+                
             if event.type == pg.MOUSEBUTTONDOWN:
                 if self.dog.pramougol.collidepoint(event.pos) == True:
                     self.money.znachenie += 1 
