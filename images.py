@@ -14,7 +14,15 @@ button = zagruzit_kart("images/button.png",[100,100])
 button2 = zagruzit_kart("images/button_clicked.png",[100,100])
 foodnames = os.listdir("images/food")
 foodkartinki = []
+odejdanames = os.listdir("images/items")
+odejda = []
+
+
 for foodname in foodnames:
     
-    foodkartinka =  zagruzit_kart("images/food/"+foodname)
-    foodkartinki.append(foodkartinka) 
+    foodkartinka =  zagruzit_kart("images/food/"+foodname,[100,100])
+    
+    foodkartinki.append(foodkartinka)
+for odejda228 in odejdanames:
+    odejdakartinka = zagruzit_kart("images/items/"+odejda228,[100,100])
+    odejda.append(odejdakartinka)
