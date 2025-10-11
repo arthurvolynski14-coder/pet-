@@ -3,6 +3,7 @@ import dog
 import images
 import harakteristiki as har
 import button
+import menu_ojedja
 import menu_eda
 # Инициализация pg
 pg.init()
@@ -29,6 +30,7 @@ class Game:
         self.ojedja = button.Button("odejda",[200,100],[700,200])
         self.game = button.Button("game",[200,100],[700,300])
         self.menu_edya = menu_eda.Menu_eda(self)
+        self.menu_ojejda = menu_ojedja.Menu_ojedja(self)
         self.sostoanie = 0 
         self.a = 1
         self.b = 2 
@@ -46,7 +48,9 @@ class Game:
             if self.sostoanie == 1:
                 self.menu_edya.draw(self.screen)
                 self.menu_edya.event()
-                
+            if self.sostoanie == 2:
+                self.menu_ojejda.draw(self.screen)
+                self.menu_ojejda.event()
     def event(self):
         for event in pg.event.get():
             if event.type == pg.QUIT:
@@ -57,6 +61,7 @@ class Game:
                     self.money.znachenie += 1 
                 if self.ojedja.pramougolnik.collidepoint(event.pos) == True:
                     self.ojedja.click()
+                    self.sostoanie = 2
                 if self.eda.pramougolnik.collidepoint(event.pos) == True:
                     self.eda.click()
                     self.sostoanie = 1
