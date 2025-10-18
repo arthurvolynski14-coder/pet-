@@ -1,5 +1,5 @@
 import pygame as pg
-class Odejda:
+class Items:
     def __init__ (self,kartina,cena):
         self.kartina = kartina
         self.cena = cena

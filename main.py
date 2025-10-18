@@ -3,7 +3,7 @@ import dog
 import images
 import harakteristiki as har
 import button
-import menu_ojedja
+import menu_odedja
 import menu_eda
 # Инициализация pg
 pg.init()
@@ -30,7 +30,7 @@ class Game:
         self.ojedja = button.Button("odejda",[200,100],[700,200])
         self.game = button.Button("game",[200,100],[700,300])
         self.menu_edya = menu_eda.Menu_eda(self)
-        self.menu_ojejda = menu_ojedja.Menu_ojedja(self)
+        self.menu_ojejda = menu_odedja.Menu_ojedja(self)
         self.sostoanie = 0 
         self.a = 1
         self.b = 2 
